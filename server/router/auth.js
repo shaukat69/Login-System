@@ -107,5 +107,10 @@ router.post('/login', async (req,res)=>{
     }
 })
 
+// Login Route Using Async
+
+router.get('/about' , authenticate , async (req,res)=>{
+    res.send(req.rootUser);
+});
 
 module.exports = router;
