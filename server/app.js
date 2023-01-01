@@ -1,6 +1,10 @@
 // Adding Express Js 
 const express = require("express");
+// Install cookie-parser and import after expess 
+const cookieParser = require('cookie-parser')
 const app = express();
+// use cookie parser after using app 
+app.use(cookieParser())
 
 // DOTENV File 
 const dotenv = require("dotenv");

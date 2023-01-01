@@ -5,6 +5,7 @@ const { findOne } = require('../model/userSchema');
 const bcrypt = require("bcrypt");
 // Use To Authenticate User 
 const jwt = require('jsonwebtoken');
+const authenticate = require('../middlewares/authenticate')
 
 // Connect DB File 
 require("../db/conn");
@@ -12,19 +13,15 @@ require("../db/conn");
 const User = require("../model/userSchema");
 
 // Middleware
-const middleware = (req, res, next) =>{
-    console.log("This is middleware");
-    next();
-}
+// const middleware = (req, res, next) =>{
+//     console.log("This is middleware");
+//     next();
+// }
 
 // GET Routes
-router.get('/', (req, res)=>{
-    res.send("Hello World");
-});
-
-router.get('/about', middleware , (req, res)=>{
-    res.send("Hello About Page");
-})
+// router.get('/', (req, res)=>{
+//     res.send("Hello World");
+// });
 
 // Registration Route Using Async
 router.post('/register', async (req, res)=>{
@@ -107,9 +104,15 @@ router.post('/login', async (req,res)=>{
     }
 })
 
-// Login Route Using Async
+// Get User Data For Profile Page
 
-router.get('/about' , authenticate , async (req,res)=>{
+router.get("/profile" , authenticate , async (req,res)=>{
+    res.send(req.rootUser);
+});
+
+// Get User Data For Contact And Home Page
+
+router.get("/getdata" , authenticate , async (req,res)=>{
     res.send(req.rootUser);
 });
 

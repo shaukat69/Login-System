@@ -4,9 +4,11 @@ const User = require("../model/userSchema");
 const Authenticate = async (req, res, next) => {
     try {
         const token = req.cookies.jwtoken; //req.cookies.token-name;
-        const verifyToken = await jwt.verify(token, process.env.SECRET_KEY); //Verify Token With Secret Key
+        // install cookie parser and add this "const cookieParser = require('cookie-parser') and app.use(cookieParser())" in app.js  
+        const verifyToken = jwt.verify(token, process.env.SECRET_KEY); //Verify Token With Secret Key
 
-        const rootUser = await User.findOne({_id:verifyToken._id, "tokens.token": token});
+        // verify token with db tokens.token 
+        const rootUser = await User.findOne({ _id:verifyToken._id, "tokens.token": token});
 
         if(!rootUser){ throw new Error("User Not Found")}
 

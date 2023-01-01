@@ -7,7 +7,7 @@ mongoose.set('strictQuery', false);
 mongoose.connect(DB,{
     useNewUrlParser: true
 }).then(()=>{
-    console.log("Conection Successfull");
+    console.log("Connection Successful");
 }).catch((err)=>{
-    console.log("Conection Failed",err);
+    console.log("Connection Failed",err);
 })
