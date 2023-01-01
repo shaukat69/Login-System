@@ -116,4 +116,35 @@ router.get("/getdata" , authenticate , async (req,res)=>{
     res.send(req.rootUser);
 });
 
+// Contact Page Using Async
+
+router.post("/contact" , authenticate , async (req,res)=>{
+    try {
+        const {name, email, phone, message} = req.body;
+
+        if(!name || !email || !phone || !message){
+            return res.json({error: "Please Fill The Data Properly!"})
+        }
+
+        const userContact = await User.findOne({_id:req.userId})
+
+        if(userContact){
+            const userMsg = await userContact.addMsg(name,email,phone,message);
+
+            await userContact.save();
+
+            res.status(201).json({message: "Contact Form Submitted Successfully"})
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+// Logout Route 
+router.get("/logout" , async (req,res)=>{
+    res.clearCookie('jwtoken', {path:"/"});
+    res.status(200).send("User Logout Successfully!");
+});
+
 module.exports = router;

@@ -31,6 +31,30 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    // add field to store date 
+    date:{
+        type: Date,
+        default:Date.now()
+    },
+    // add message field to store contact form data 
+    messages:[{
+        name:{
+            type: String,
+            required: true
+        },
+        email:{
+            type: String,
+            required: true
+        },
+        phone:{
+            type: Number,
+            required: true
+        },
+        message:{
+            type: String,
+            required: true
+        }
+    }],
     //Add New Field For Token
     tokens:[
         {
@@ -67,6 +91,17 @@ userSchema.methods.generateAuthToken = async function(){
         // Return The newToken 
         return newToken;
 
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// store contact form message
+userSchema.methods.addMsg = async function(name,email,phone,message){
+    try {
+        this.messages = this.messages.concat({name,email,phone,message});
+        await this.save();
+        return this.messages;
     } catch (error) {
         console.log(error);
     }

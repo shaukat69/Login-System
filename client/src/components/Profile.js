@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 const Profile = () => {
   const nevigate = useNavigate();
   const [userData, setUserData] = useState({});
-  
 
   const profilePage = async () => {
     try {
@@ -32,44 +31,46 @@ const Profile = () => {
   };
 
   useEffect(() => {
-    profilePage()
+    profilePage();
   }, []);
 
   return (
     <>
-      <div className="container py-5">
-        <h1 className="text-center my-3 pb-5">My Profile</h1>
-        <div className="container">
-          <form method="GET">
-            <div className="row mb-3">
-              <div className="col">
-                Id: <h4>{userData._id}</h4>
+      <div className="profile_container">
+        <div class="container form_card">
+          <h1 className="text-center my-3 pb-5">My Profile</h1>
+          <div className="container">
+            <form method="GET">
+              <div className="row mb-3">
+                <div className="col">
+                  Id: <h4>{userData._id}</h4>
+                </div>
+                <div className="col">
+                  Name: <h4>{userData.name}</h4>
+                </div>
               </div>
-              <div className="col">
-                Name: <h4>{userData.name}</h4>
-              </div>
-            </div>
-            <div className="row mb-3">
-              <div className="col">
-                Phone: <h4>{userData.phone}</h4>
+              <div className="row mb-3">
+                <div className="col">
+                  Phone: <h4>{userData.phone}</h4>
+                </div>
+
+                <div className="col">
+                  Email: <h4>{userData.email}</h4>
+                </div>
               </div>
 
-              <div className="col">
-                Email: <h4>{userData.email}</h4>
+              <div className="mb-3">
+                Work: <h4>{userData.work}</h4>
               </div>
-            </div>
 
-            <div className="mb-3">
-              Work: <h4>{userData.work}</h4>
-            </div>
-
-            <div className="mb-3">
-              Hobbies:
-              <h4>
-                Cricket, Football, Programming, Learning, Singing, Dancing
-              </h4>
-            </div>
-          </form>
+              <div className="mb-3">
+                Hobbies:
+                <h4>
+                  Cricket, Football, Programming, Learning, Singing, Dancing
+                </h4>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </>
