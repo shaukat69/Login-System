@@ -43,28 +43,28 @@ const Profile = () => {
             <form method="GET">
               <div className="row mb-3">
                 <div className="col">
-                  Id: <h4>{userData._id}</h4>
+                <i class="fa-sharp fa-solid fa-id-card"></i> Id: <h4>{userData._id}</h4>
                 </div>
                 <div className="col">
-                  Name: <h4>{userData.name}</h4>
+                <i class="fa-sharp fa-solid fa-user"></i> Name: <h4>{userData.name}</h4>
                 </div>
               </div>
               <div className="row mb-3">
                 <div className="col">
-                  Phone: <h4>{userData.phone}</h4>
+                <i class="fa-sharp fa-solid fa-phone"></i> Phone: <h4>{userData.phone}</h4>
                 </div>
 
                 <div className="col">
-                  Email: <h4>{userData.email}</h4>
+                <i class="fa-sharp fa-solid fa-envelope"></i> Email: <h4>{userData.email}</h4>
                 </div>
               </div>
 
               <div className="mb-3">
-                Work: <h4>{userData.work}</h4>
+              <i class="fa-sharp fa-solid fa-briefcase"></i> Work: <h4>{userData.work}</h4>
               </div>
 
               <div className="mb-3">
-                Hobbies:
+              <i class="fa-sharp fa-solid fa-ranking-star"></i> Hobbies:
                 <h4>
                   Cricket, Football, Programming, Learning, Singing, Dancing
                 </h4>

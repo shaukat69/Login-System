@@ -74,7 +74,7 @@ const Signup = () => {
               <div className="row mb-3">
                 <div className="col">
                   <label htmlFor="name" className="form-label">
-                    Name
+                  <i class="fa-sharp fa-solid fa-user"></i> Name
                   </label>
                   <input
                     type="text"
@@ -88,7 +88,7 @@ const Signup = () => {
                 </div>
                 <div className="col">
                   <label htmlFor="phone" className="form-label">
-                    Phone
+                  <i class="fa-sharp fa-solid fa-phone"></i> Phone
                   </label>
                   <input
                     type="text"
@@ -104,7 +104,7 @@ const Signup = () => {
 
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
-                  Email
+                <i class="fa-sharp fa-solid fa-envelope"></i> Email
                 </label>
                 <input
                   type="email"
@@ -118,7 +118,7 @@ const Signup = () => {
 
               <div className="mb-3">
                 <label htmlFor="work" className="form-label">
-                  Work
+                <i class="fa-sharp fa-solid fa-briefcase"></i> Work
                 </label>
                 <input
                   type="text"
@@ -132,7 +132,7 @@ const Signup = () => {
 
               <div className="mb-3">
                 <label htmlFor="password" className="form-label">
-                  Password
+                <i class="fa-sharp fa-solid fa-lock"></i> Password
                 </label>
                 <input
                   type="password"
@@ -146,7 +146,7 @@ const Signup = () => {
 
               <div className="mb-3">
                 <label htmlFor="cpassword" className="form-label">
-                  Confirm Password
+                <i class="fa-sharp fa-solid fa-lock"></i> Confirm Password
                 </label>
                 <input
                   type="password"

@@ -7,6 +7,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Footer from "./components/Footer";
+import Error from "./components/Error";
 import "./App.css"
 
 // Import Reducer 
@@ -34,7 +35,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
-        {/* <Route element={<Error />} /> */}
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer/>
     </userContext.Provider>

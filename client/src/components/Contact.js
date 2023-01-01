@@ -69,7 +69,10 @@ const Contact = () => {
 
     const data = await res.json();
 
-    if (!data) {
+    if(!name, !email, !phone, !message){
+      alert("Please Fill All The Fields Properly!");
+    }
+    else if (!data) {
       alert("Message Not Send!");
     } else {
       alert("Message Sent Successfully");
@@ -88,7 +91,7 @@ const Contact = () => {
               <div className="row mb-3">
                 <div className="col">
                   <label htmlFor="name" className="form-label">
-                    Name
+                  <i class="fa-sharp fa-solid fa-user"></i> Name
                   </label>
                   <input
                     type="text"
@@ -102,7 +105,7 @@ const Contact = () => {
                 </div>
                 <div className="col">
                   <label htmlFor="phone" className="form-label">
-                    Phone
+                  <i class="fa-sharp fa-solid fa-phone"></i> Phone
                   </label>
                   <input
                     type="text"
@@ -118,7 +121,7 @@ const Contact = () => {
 
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
-                  Email
+                <i class="fa-sharp fa-solid fa-envelope"></i> Email
                 </label>
                 <input
                   type="email"
@@ -135,7 +138,7 @@ const Contact = () => {
                   htmlFor="exampleFormControlTextarea1"
                   className="form-label"
                 >
-                  Message
+                 <i class="fa-sharp fa-solid fa-message"></i> Message
                 </label>
                 <textarea
                   className="form-control"

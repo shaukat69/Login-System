@@ -29,7 +29,7 @@ const Login = () => {
 
     const data = await res.json();
 
-    if (email === "" || password === "") {
+    if (!email, !password ) {
       alert("Please Fill All The Fields Properly!");
     } else if (res.status === 400 || !data) {
       alert("Invalid Credentials!");
@@ -51,7 +51,7 @@ const Login = () => {
             <form>
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
-                  Email
+                <i class="fa-sharp fa-solid fa-envelope"></i> Email
                 </label>
                 <input
                   type="email"
@@ -64,7 +64,7 @@ const Login = () => {
 
               <div className="mb-3">
                 <label htmlFor="password" className="form-label">
-                  Password
+                <i class="fa-sharp fa-solid fa-lock"></i> Password
                 </label>
                 <input
                   type="password"

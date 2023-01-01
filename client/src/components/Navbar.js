@@ -71,7 +71,7 @@ const Navbar = () => {
       <nav className="navbar sticky-top navbar-expand-lg px-4 navbar-dark bg-dark">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">
-            Instagram
+            MERN PROJECT  
           </NavLink>
           <button
             className="navbar-toggler"
